@@ -77,7 +77,7 @@ def get_df():
 
 if uploaded_file is not None:
     df = get_df()
-    area_grid.data_editor(df)
+    area_grid.data_editor(df, use_container_width=True)
 
 name_desc = '需求描述'
 name_reply = '应答'
@@ -107,6 +107,7 @@ if rag:
                         row_bg, subset=(processed + [idx], slice(None),),
                         axis=1
                     ),
+                    use_container_width=True,
                 )
 
                 reply = ''
@@ -116,7 +117,7 @@ if rag:
                 df.loc[idx, name_reply] = reply
                 processed.append(idx)
 
-                area_grid.dataframe()
+                area_grid.dataframe(use_container_width=True, data=df)
 
     elif not apikey:
         st.error('Please enter your API key.')

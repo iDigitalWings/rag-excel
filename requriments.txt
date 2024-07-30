@@ -1,0 +1,6 @@
+streamlit
+openpyxl
+jinja2
+openai
+socksio
+requests

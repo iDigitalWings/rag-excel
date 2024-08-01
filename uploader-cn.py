@@ -1,4 +1,22 @@
 import streamlit as st
+from streamlit import divider
+
+css='''
+<style>
+div[data-testid="stHorizontalBlock"] > div:last-child [data-testid="stFullScreenFrame"] > div {flex-direction: row-reverse;}
+</style>
+'''
+
+st.markdown(css, unsafe_allow_html=True)
+
+
+h1, h2 = st.columns([2,1])
+with h1:
+    st.header("中文上传控件", divider = 'rainbow')
+with h2:
+    st.image('./assets/shuyi-llm-2.png', width=100)
+
+
 
 css = '''
 <style>
